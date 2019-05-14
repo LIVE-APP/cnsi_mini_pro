@@ -19,10 +19,18 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>Register</servlet-name>
-    <servlet-class>com.cnsi.Register</servlet-class>
+    <servlet-class>com.cnsi.Register_Controller</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Register</servlet-name>
-    <url-pattern>/Register</url-pattern>
+    <url-pattern>/Register_Controller</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.cnsi.Logout_Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout_Controller</url-pattern>
   </servlet-mapping>
 </web-app>
