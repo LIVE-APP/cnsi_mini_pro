@@ -1,4 +1,3 @@
-package com.cnsi;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.cnsi.dao.Logindao;
+import com.jdbc.Logindao;
 
 public class LoginController extends HttpServlet {
 	
@@ -24,7 +23,6 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("email", s1);
 			
 			
-			System.out.println(s1);
 			Logindao dao = new Logindao();
 			
 			if(dao.service(s1,s2)){

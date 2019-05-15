@@ -1,4 +1,4 @@
-package com.cnsi.dao;
+package com.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,13 +10,14 @@ public class RegisterDao {
 	
 	public boolean service(String username, String mobile, String email,String password ) throws SQLException{
 		String sql = "insert into user_reg values(?,?,?,?)";
-		String url = "jdbc:oracle:thin:@10.86.25.49:1521/hcedev";
-		String db_usrname = "tester";
-		String db_pass ="tester";
+		String url = "jdbc:oracle:thin:@localhost:1521/xe";
+		String db_usrname = "system";
+		String db_pass ="appu@12345";
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			Connection conc = DriverManager.getConnection(url,db_usrname,db_pass);
+			System.out.println("passed");
 			PreparedStatement ps = conc.prepareStatement(sql);
 			
 			ps.setString(1, username);

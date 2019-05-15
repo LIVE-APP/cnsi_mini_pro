@@ -1,4 +1,3 @@
-package com.cnsi;
 
 import java.io.IOException;
 
@@ -10,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/Logout")
-public class Logout extends HttpServlet {
+public class Logout_Controller extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     System.out.println("logout Entered");

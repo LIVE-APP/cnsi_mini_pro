@@ -1,4 +1,4 @@
-package com.cnsi.dao;
+package com.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,10 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Logindao {
-	String sql ="select * from user_login where email =? and password = ?";
-	String url  = "jdbc:oracle:thin:@10.86.25.49:1521/hcedev";
-	String db_uname = "tester";
-	String db_pass = "tester";
+	String sql ="select * from user_login where c_email =? and c_pass = ?";
+	String url  = "jdbc:oracle:thin:@localhost:1521:xe";
+	
+	String db_uname = "system";
+	String db_pass = "appu@12345";
 
 	public boolean service(String email, String password) throws SQLException {
 		

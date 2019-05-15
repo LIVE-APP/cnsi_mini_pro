@@ -1,5 +1,3 @@
-package com.cnsi;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
 * Servlet implementation class LoginController
 */
-public class Register extends HttpServlet {
+public class Register_Controller extends HttpServlet {
                 
                 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
                                 String bid=request.getParameter("name");
@@ -29,7 +27,7 @@ public class Register extends HttpServlet {
                                                 Class.forName("oracle.jdbc.driver.OracleDriver");
                                 // loads driver
                                 Connection c = DriverManager.getConnection("jdbc:oracle:thin:@10.86.25.49:1521:hcedev","tester","tester"); // gets a new connection
-                                PreparedStatement ps = c.prepareStatement("insert into user_reg values(?,?,?,?)");
+                                PreparedStatement ps = c.prepareStatement("insert into user_login values(?,?,?,?)");
                                 ps.setString(1, bid);
                                 ps.setString(2, un);
                                 ps.setString(3, pwd);
