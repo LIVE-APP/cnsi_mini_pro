@@ -1,6 +1,11 @@
 function myfunc(){
-//alert("function worked");
-if(document.getElementById('sel').value=="Household"){
+	document.getElementById("order_id").value = document.form1.source.selectedIndex;
+	console.log(document.getElementById("order_id").value);
+	if(document.form1.source.selectedIndex==0)
+	{ document.getElementById("small").innerHTML = "Please Select the Category Type";
+	document.form1.source.focus();
+	}
+	if(document.getElementById('sel').value=="Household"){
 document.getElementById('hide').hidden = false;
 document.getElementById('hide2').hidden = true;
 document.getElementById('hide3').hidden = true;
@@ -21,7 +26,7 @@ document.getElementById('hide').hidden = true;
 document.getElementById('imgg').style.margin = "0% 30%";
 }
 }
-function validate(){
+/*function validate(){
 
 let fname = document.getElementById("fname").value;
 let pass =  document.getElementById("pass").value;
@@ -36,3 +41,15 @@ if((fname != "appu@gmail.com")&(pass != "appu")){
 }
 
 }
+*/
+/*function home(){
+	console.log(document.form1.source.selectedIndex);
+	if(document.form1.source.selectedIndex==0)
+{ document.getElementById("small").innerHTML = "Please Select the Category Type";
+document.form1.source.focus();
+return false;
+}
+document.getElementById("order_id").value = document.form1.source.selectedIndex;
+
+return true;
+}*/
