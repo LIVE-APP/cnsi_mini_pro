@@ -11,7 +11,7 @@
     <img src="compnay-name.png" align="left" />
     <script src = "scripts.js"></script>
    <div class ="logout">
-      <form  action="Logout">
+      <form  action="Logout_Controller">
       <input type="submit" class ="btn btn-danger" name="" value="logout">
     </form>
     </div>
@@ -42,36 +42,33 @@
     
   </div>
   <div id = "imgg">
+  <form name= "form1">
     <label for="fname">Category*</label>
     <select class="form-control" name="source" id="sel" >
               <option value="">Select</option>
               <option value="Household">Household Shifting</option>
               <option value="Office">Office Shifting</option>
               <option value="Vehicle">Vehicle Shifting</option>
-              <option value="House+Vehicle">House+Vehicle Shifting</option>
-              <option value="Off+veh">Office+ Vehicle Shifting</option>
+              
               </select><br>
+              <!--  <input type="number" id="order_id" name="o_Id"  placeholder="" > -->
+              </form>
+              <p id = "small" style = "color: red"></p> 
     <button class = "btn btn-primary" onclick="myfunc()">start Moving</button>
+    
 
   </div>
-<!-- <div id = "imgg" >
 
-  <img src="home.png" class="img1" onclick="myfunc()">
-
-  <img src="office.png" class="img2">
-
-
-</div> -->
  
   <div id = "hide" hidden=true>
-<form action="welcome2_submit" method="get" accept-charset="utf-8">
+<form action="Household_Packers" method="post" accept-charset="utf-8">
     <table>
       <tr>
         <div class= "div1">
 
           <td class = "td1"> 
             <label for="fname">Name*</label>
-            <input class ="form-control" type="text" name="fname" value="" placeholder="Name">
+            <input class ="form-control" type="text" name="h_name" value="" placeholder="Name">
           </td>
         </div>
 
@@ -79,14 +76,14 @@
 
           <td class = "td1">
             <label for="num">Booking Mobile Number*</label>
-            <input class ="form-control" type="number" name="num" value="" placeholder="Mobile Number">
+            <input class ="form-control" type="number" name="h_num" value="" placeholder="Mobile Number">
           </td>
         </div>
 
         <div>
 
           <td class = "td1"> <label for="email">Email Address*</label> 
-            <input class ="form-control" type="email" name="email" value="" placeholder="Email">
+            <input class ="form-control" type="email" name="h_email" value="" placeholder="Email">
           </td>
         </div>
 
@@ -95,7 +92,7 @@
           <td class = "td1"> 
             <label for="source">Source*</label> 
             <!-- <input class ="form-control" type="email" name="email" value="" placeholder=""> -->
-            <select class="form-control" name="source">
+            <select class="form-control" name="h_source">
               <option value="">Select</option>
               <option value="Chennai">Chennai</option>
               <option value="vellore">Vellore</option>
@@ -110,7 +107,7 @@
         <div>
 
           <td class = "td1"> <label for="email">Destination*</label> 
-           <select class="form-control" name="source">
+           <select class="form-control" name="h_dest">
             <option value="">Select</option>
             <option value="Chennai">Chennai</option>
             <option value="vellore">Vellore</option>
@@ -126,7 +123,7 @@
       <div>
         <td style = "padding: 10px"> 
           <label for="fname">From Address*</label>
-          <textarea class="form-control" name="" rows="3"></textarea>
+          <textarea class="form-control" name="h_fromadd" rows="3"></textarea>
         </td>
       </div>
 
@@ -134,25 +131,37 @@
 
         <td style = "padding: 10px">
           <label for="num">To Address*</label>
-          <textarea class="form-control" name="" rows="3"></textarea>
+          <textarea class="form-control" name="h_toadd" rows="3"></textarea>
         </td>
       </div>
+              <td style = "padding: 10px">
+            <input type="number" id="order_id" name="o_Id"  placeholder="" hidden>
+        </td>
+
     </tr>
-    </div>
       </table>
-      <input style = "position: relative; float: right; margin-right: 25%"class ="btn btn-primary" type="button" name="" value="Submit Form" onclick="alerts()">
+      <input style = "position: relative; float: right; margin-right: 25%"class ="btn btn-primary" type="submit" name="" value="Submit Form" >
     </form>
    </div>
-
+   
+   
+   
+   
+   
+   
+   
+   
+   
+<!-- Office Shift -->
      <div id = "hide2" hidden=true>
-<form action="welcome2_submit" method="get" accept-charset="utf-8">
+<form action="Office_Controller" method="post" accept-charset="utf-8">
     <table>
       <tr>
         <div class= "div1">
 
           <td class = "td1"> 
             <label for="fname">Office Name*</label>
-            <input class ="form-control" type="text" name="fname" value="" placeholder="Name">
+            <input class ="form-control" type="text" name="o_name" value="" placeholder="Name">
           </td>
         </div>
 
@@ -160,14 +169,14 @@
 
           <td class = "td1">
             <label for="num">Booking Mobile Number*</label>
-            <input class ="form-control" type="number" name="num" value="" placeholder="Mobile Number">
+            <input class ="form-control" type="number" name="o_mno" value="" placeholder="Mobile Number">
           </td>
         </div>
 
         <div>
 
           <td class = "td1"> <label for="email">Email Address*</label> 
-            <input class ="form-control" type="email" name="email" value="" placeholder="Email">
+            <input class ="form-control" type="email" name="o_email" value="" placeholder="Email">
           </td>
         </div>
 
@@ -176,7 +185,7 @@
           <td class = "td1"> 
             <label for="source">Office Source*</label> 
             <!-- <input class ="form-control" type="email" name="email" value="" placeholder=""> -->
-            <select class="form-control" name="source">
+            <select class="form-control" name="o_source">
               <option value="">Select</option>
               <option value="Chennai">Chennai</option>
               <option value="vellore">Vellore</option>
@@ -190,8 +199,8 @@
 
         <div>
 
-          <td class = "td1"> <label for="email">To Destination*</label> 
-           <select class="form-control" name="source">
+          <td class = "td1"> <label for="">To Destination*</label> 
+           <select class="form-control" name="o_dest">
             <option value="">Select</option>
             <option value="Chennai">Chennai</option>
             <option value="vellore">Vellore</option>
@@ -207,7 +216,7 @@
       <div>
         <td style = "padding: 10px"> 
           <label for="fname">From Address*</label>
-          <textarea class="form-control" name="" rows="3"></textarea>
+          <textarea class="form-control" name="o_fromaddress" rows="3"></textarea>
         </td>
       </div>
 
@@ -215,17 +224,20 @@
 
         <td style = "padding: 10px">
           <label for="num">To Address*</label>
-          <textarea class="form-control" name="" rows="3"></textarea>
+          <textarea class="form-control" name="o_toaddress" rows="3"></textarea>
+        </td>
+        <td style = "padding: 10px">
+           <input type="number" id="order_id" name="o_Id"  placeholder="" hidden>
         </td>
       </div>
       </table>
-      <input style = "position: relative; float: right; margin-right: 25%"class ="btn btn-primary" type="button" name="" value="Submit Form" onclick="alerts()">
+      <input style = "position: relative; float: right; margin-right: 25%"class ="btn btn-primary" type="submit" name="" value="Submit Form" >
     </form>
    </div>
 
 <div id = "hide3" hidden=true>
 
-<form action="welcome2_submit" method="get" accept-charset="utf-8">
+<form action="Vehicle_Controller" method="post" accept-charset="utf-8">
     <table>
       <tr>
          <div>
