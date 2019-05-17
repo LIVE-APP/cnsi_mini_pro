@@ -1,3 +1,4 @@
+package com.cnsi;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.jdbc.OfficeDao;
+import com.cnsi.dao.OfficeDao;
 
 public class Office_Controller extends HttpServlet {
 	
@@ -21,7 +22,9 @@ public class Office_Controller extends HttpServlet {
 		String s5 = req.getParameter("o_dest");
 		String s6 = req.getParameter("o_fromaddress");
 		String s7 = req.getParameter("o_toaddress");
+		String s8 = req.getParameter("o_Id");
 		//String s3 = req.getParameter("pass");
+		System.out.println("o_eneterd");
 		try{  
 			
 			HttpSession session = req.getSession();
@@ -30,9 +33,11 @@ public class Office_Controller extends HttpServlet {
 		
 			
 			
-			OfficeDao dao = new OfficeDao();
+			OfficeDao Doa = new OfficeDao();
+			System.out.println("o_eneterd");
+			System.out.println("o_eneterd");
 			
-			if(dao.service(s1,s2,s3,s4,s5,s6,s7)){
+			if(Doa.o_service(s1,s2,s3,s4,s5,s6,s7,s8)){
 				res.sendRedirect("success.jsp");
 			}else{
 				res.sendRedirect("dashboard.jsp");
