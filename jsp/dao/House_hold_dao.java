@@ -17,7 +17,7 @@ public class House_hold_dao {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(db_url,db_usrname, db_pass);
-			String sql = "insert into household(name,mobile,email,source,destination,from_address,to_address,ordercode) values('"+username+"','"+mobile+"','"+email+"','"+source+"','"+dest+"','"+fromadd+"','"+toadd+"','"+Order_Code+"')";
+			String sql = "insert into bookings(name,mobile,email,source,destination,from_address,to_address,ordercode) values('"+username+"','"+mobile+"','"+email+"','"+source+"','"+dest+"','"+fromadd+"','"+toadd+"','"+Order_Code+"')";
 
 			PreparedStatement ps = con.prepareStatement(sql);
 			//ps.setString(1, Order_id);
