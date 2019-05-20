@@ -8,21 +8,22 @@ import java.sql.SQLException;
 
 public class VehicleDao {
 
-			String sql ="insert into household values(?,?,?,?,?,?,?)";
+			
 			String url = "jdbc:oracle:thin:@10.86.25.49:1521/hcedev";
 			
 			String db_uname = "tester";
 			String db_pass = "tester";
 
-			public boolean service(String username,String v_type, String v_namenum, String mobile, String email, String source, String dest, String fromadd, String toadd,String Order_Code ) throws SQLException {
+			public boolean service(String username,String vehicle_type, String v_namenum, String mobile, String email, String source, String dest, String fromadd, String toadd,String Order_Code ) throws SQLException {
 				
 				try {
 					Class.forName("oracle.jdbc.driver.OracleDriver");
-					String sql = "insert into vehicle_shift(name,vehicle_type, v_namenum,mobile,email,source,destination,from_address,to_address,ordercode) values ('"+username+"','"+v_type+"','"+v_namenum+"','"+mobile+"','"+email+"','"+source+"','"+dest+"','"+fromadd+"','"+toadd+"','"+Order_Code+"')";
+					String sql = "insert into bookings(name,vehicle_type,v_namenum,mobile,email,source,destination,from_address,to_address,ordercode) values ('"+username+"','"+vehicle_type+"','"+v_namenum+"','"+mobile+"','"+email+"','"+source+"','"+dest+"','"+fromadd+"','"+toadd+"','"+Order_Code+"')";
 					Connection con = DriverManager.getConnection(url,db_uname, db_pass);
 					System.out.println("oracle Passed url");
 					
 					PreparedStatement ps = con.prepareStatement(sql);
+					System.out.println("oracle Passed url");
 /*					ps.setInt(1,OrderCode);
 					ps.setInt(2,orderId);
 					ps.setString(3, name);
@@ -36,8 +37,9 @@ public class VehicleDao {
 					ps.setString(11,to_add);*/
 					
 					ResultSet Rs = ps.executeQuery();
-					
+					System.out.println("oracle Passed url");
 					if(Rs.next()){
+						System.out.println("oracle Passed url");
 						return true;
 					}
 					
