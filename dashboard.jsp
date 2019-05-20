@@ -18,7 +18,7 @@
   </header>
 </head>
 <body>
-				<%
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <%
 				
 				response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); 	// HTTP 1.1
 				
@@ -51,10 +51,11 @@
               <option value="Vehicle">Vehicle Shifting</option>
               
               </select><br>
-              <!--  <input type="number" id="order_id" name="o_Id"  placeholder="" > -->
+               <input type="number" id="order_id" name="o_Id"  placeholder="" hidden >
               </form>
               <p id = "small" style = "color: red"></p> 
     <button class = "btn btn-primary" onclick="myfunc()">start Moving</button>
+  
     
 
   </div>
@@ -135,7 +136,7 @@
         </td>
       </div>
               <td style = "padding: 10px">
-            <input type="number" id="order_id" name="o_Id"  placeholder="" hidden>
+            <input type="number" id="order_id" name="h_Id"  value = "1" placeholder="" hidden >
         </td>
 
     </tr>
@@ -227,13 +228,15 @@
           <textarea class="form-control" name="o_toaddress" rows="3"></textarea>
         </td>
         <td style = "padding: 10px">
-           <input type="number" id="order_id" name="o_Id"  placeholder="" hidden>
+           <input type="number" id="order_id" name="of_Id" value= "2"  placeholder="" hidden >
         </td>
       </div>
       </table>
       <input style = "position: relative; float: right; margin-right: 25%"class ="btn btn-primary" type="submit" name="" value="Submit Form" >
     </form>
    </div>
+   
+   <!-- vehicle Shifting -->
 
 <div id = "hide3" hidden=true>
 
@@ -241,7 +244,14 @@
     <table>
       <tr>
          <div>
+         <div class= "div1">
 
+          <td class = "td1"> 
+            <label for="fname">Customer Name*</label>
+            <input class ="form-control" type="text" name="v__name" value="" placeholder="Name">
+          </td>
+        </div>
+         
           <td class = "td1"> <label for="email">Vehicle Type*</label> 
            <select class="form-control" name="source">
             <option value="">Select</option>
@@ -291,7 +301,8 @@
 
           </td>
         </div>
-
+</tr>
+   <tr>
         <div>
 
           <td class = "td1"> <label for="email">Destination*</label> 
@@ -305,9 +316,9 @@
           </select>
         </td>
       </div>
-    </tr>
+    
 
-    <tr>
+ 
       <div>
         <td style = "padding: 10px"> 
           <label for="fname">From Address*</label>
@@ -321,13 +332,17 @@
           <label for="num">To Address*</label>
           <textarea class="form-control" name="" rows="3"></textarea>
         </td>
+        <td style = "padding: 10px">
+            <input type="number" id="order_id" name="v_Id"  value = "3" placeholder="" hidden >
+        </td>
       </div>
     </tr>
     </div>
       </table>
-      <input style = "position: relative; float: right; margin-right: 25%"class ="btn btn-primary" type="button" name="" value="Submit Form" onclick="alerts()">
+      <input style = "position: relative; float: right; margin-right: 25%"class ="btn btn-primary" type="submit" name="" value="Submit Form" >
     </form>
    </div>
+   
 
 <footer>
 
