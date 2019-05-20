@@ -248,12 +248,12 @@
 
           <td class = "td1"> 
             <label for="fname">Customer Name*</label>
-            <input class ="form-control" type="text" name="v__name" value="" placeholder="Name">
+            <input class ="form-control" type="text" name="v_name" value="" placeholder="Name">
           </td>
         </div>
          
           <td class = "td1"> <label for="email">Vehicle Type*</label> 
-           <select class="form-control" name="source">
+           <select class="form-control" name="v_type">
             <option value="">Select</option>
             <option value="Bike">Bike</option>
             <option value="Car">Car</option>
@@ -265,7 +265,7 @@
 
           <td class = "td1"> 
             <label for="fname">Vehicle Name and Number*</label>
-            <input class ="form-control" type="text" name="fname" value="" placeholder="Vehicle Name / Number
+            <input class ="form-control" type="text" name="v_namenum" value="" placeholder="Vehicle Name / Number
             ">
           </td>
         </div>
@@ -274,14 +274,14 @@
 
           <td class = "td1">
             <label for="num">Booking Mobile Number*</label>
-            <input class ="form-control" type="number" name="num" value="" placeholder="Mobile Number">
+            <input class ="form-control" type="number" name="v_mno" value="" placeholder="Mobile Number">
           </td>
         </div>
 
         <div>
 
           <td class = "td1"> <label for="email">Email Address*</label> 
-            <input class ="form-control" type="email" name="email" value="" placeholder="Email Address">
+            <input class ="form-control" type="email" name="v_email" value="" placeholder="Email Address">
           </td>
         </div>
 
@@ -290,7 +290,7 @@
           <td class = "td1"> 
             <label for="source">Source*</label> 
             <!-- <input class ="form-control" type="email" name="email" value="" placeholder=""> -->
-            <select class="form-control" name="source">
+            <select class="form-control" name="v_source">
               <option value="">Select</option>
               <option value="Chennai">Chennai</option>
               <option value="vellore">Vellore</option>
@@ -306,7 +306,7 @@
         <div>
 
           <td class = "td1"> <label for="email">Destination*</label> 
-           <select class="form-control" name="source">
+           <select class="form-control" name="v_dest">
             <option value="">Select</option>
             <option value="Chennai">Chennai</option>
             <option value="vellore">Vellore</option>
@@ -322,7 +322,7 @@
       <div>
         <td style = "padding: 10px"> 
           <label for="fname">From Address*</label>
-          <textarea class="form-control" name="" rows="3"></textarea>
+          <textarea class="form-control" name="v_fromaddress" rows="3"></textarea>
         </td>
       </div>
 
@@ -330,10 +330,10 @@
 
         <td style = "padding: 10px">
           <label for="num">To Address*</label>
-          <textarea class="form-control" name="" rows="3"></textarea>
+          <textarea class="form-control" name="v_toaddress" rows="3"></textarea>
         </td>
         <td style = "padding: 10px">
-            <input type="number" id="order_id" name="v_Id"  value = "3" placeholder="" hidden >
+            <input type="number" id="order_id" name="v_Id"  value = 3 placeholder="" hidden >
         </td>
       </div>
     </tr>
