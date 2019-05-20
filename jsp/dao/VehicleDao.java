@@ -14,11 +14,11 @@ public class VehicleDao {
 			String db_uname = "tester";
 			String db_pass = "tester";
 
-			public boolean service(String username,String vehicle_type, String v_namenum, String mobile, String email, String source, String dest, String fromadd, String toadd,String Order_Code ) throws SQLException {
+			public boolean service(String name,String vehicle_type, String v_namenum, String mobile, String email, String source, String destination, String from_address, String to_address,String ordercode ) throws SQLException {
 				
 				try {
 					Class.forName("oracle.jdbc.driver.OracleDriver");
-					String sql = "insert into bookings(name,vehicle_type,v_namenum,mobile,email,source,destination,from_address,to_address,ordercode) values ('"+username+"','"+vehicle_type+"','"+v_namenum+"','"+mobile+"','"+email+"','"+source+"','"+dest+"','"+fromadd+"','"+toadd+"','"+Order_Code+"')";
+					String sql = "insert into bookings(name,vehicle_type,v_namenum,mobile,email,source,destination,from_address,to_address,ordercode) values ('"+name+"','"+vehicle_type+"','"+v_namenum+"','"+mobile+"','"+email+"','"+source+"','"+destination+"','"+from_address+"','"+to_address+"','"+ordercode+"')";
 					Connection con = DriverManager.getConnection(url,db_uname, db_pass);
 					System.out.println("oracle Passed url");
 					
