@@ -25,9 +25,10 @@ public class Vehicle_Controller extends HttpServlet {
 		String s7 = req.getParameter("v_dest");
 		String s8 = req.getParameter("v_fromaddress");
 		String s9 = req.getParameter("v_toaddress");
-		String s10 = req.getParameter("o_Id");
-	
-		
+		String s10 = req.getParameter("v_Id");
+		String s11 = req.getParameter("o_Id");
+		System.out.println("Static Order Code :"+s10);
+		System.out.println("Dynamic Order Code :"+s11);
 		//String s3 = req.getParameter("pass");
 		try{  
 			
