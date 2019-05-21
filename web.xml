@@ -25,7 +25,7 @@
     <servlet-name>Register</servlet-name>
     <url-pattern>/Register_Controller</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>Logout</servlet-name>
     <servlet-class>com.cnsi.Logout_Controller</servlet-class>
   </servlet>
@@ -33,7 +33,7 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/Logout_Controller</url-pattern>
   </servlet-mapping>
-      <servlet>
+  <servlet>
     <servlet-name>household</servlet-name>
     <servlet-class>com.cnsi.Household_Packers</servlet-class>
   </servlet>
@@ -49,12 +49,21 @@
     <servlet-name>Office_Controller</servlet-name>
     <url-pattern>/Office_Controller</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>Vehicle_Controller</servlet-name>
     <servlet-class>com.cnsi.Vehicle_Controller</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Vehicle_Controller</servlet-name>
-    <url-pattern>Vehicle_Controller</url-pattern>
+    <url-pattern>/Vehicle_Controller</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>View</servlet-name>
+  <servlet-class>com.cnsi.View_Alldata</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>View</servlet-name>
+  <url-pattern>View_Alldata</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
