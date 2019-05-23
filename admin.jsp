@@ -7,6 +7,7 @@
 <%@page  import ="java.io.PrintWriter"%>
 <%@page import = "java.sql.PreparedStatement"%>
 <%@ page import = "java.io.*,java.util.*" %>
+<%@page import ="javax.servlet.http.HttpServletRequest" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,40 +15,39 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script>
- 
-  </script>
-</head>
-<body>
-
-	Admin portal
-	<form>
-<table style = "width:100%; border :none" id = "table"	>
-	<tr>
-	<td style ="border :none">	
-<input type="button" class = "btn btn-success" name = "1" id = "table1" value = "All Bookings" onclick = "all_book()"/>
-</td>
-<td style ="border :none">
-<input type="submit" class = "btn btn-secondry" name="2"  id = "table2" value = "Household Bookings" onclick = "house()"></td>
-<td style ="border :none">
-<input type="submit" class = "btn btn-primary" name="3"  id = "table3" value = "Office Bookings" onclick = "office()">
-</td>
-<td style ="border :none"> 
-<input type="submit" class = "btn btn-secondry" name="4"   id = "table4" value = "Vehicle Bookings"onclick = "vehicle()">
-</td>	
-</tr>
-</table>
-</form>
-<style>
+   <link rel="stylesheet" type="text/css" href="dashboard.css" />
+  <style>
 th, td {
   border: 1px solid black;
 }
+#sel {
+	width: 50%;
+    margin: auto;
+    margin-top: 15%;
+}
 
 </style>
+  <header class="haed"></header>
+</head>
+<body>
+		<div>
+			<form  method ="post">
+					<select class="form-control" name="source" id="sel">
+              <option value="">Select</option>
+              <option value="All">All Bookings</option>
+              <option value="Household">Household Shifting</option>
+              <option value="Office">Office Shifting</option>
+              <option value="Vehicle">Vehicle Shifting</option>
+              </select><br>
+             
+              <input type = "submit"   class = "btn btn-primary" name ="test" value ="Fetch Data"/>       
+</form>
+</div>
+
 <div id="all_book" >
 	<table style=" text-align: left">
 		<tr>
-			<th >ORDER ID</th>
+			<th>ORDER ID</th>
 			<th>NAME</th>
 			<th>VEHICLE TYPE</th>
 			<th>VEHILE NAME</th>
@@ -63,7 +63,7 @@ th, td {
 		</tr>
 		<br>
 		<br>
-		<input type = "button" name ="test" value = 1/>
+		
 <%
 String url = "jdbc:oracle:thin:@10.86.25.49:1521/hcedev";
 	
@@ -71,19 +71,33 @@ String url = "jdbc:oracle:thin:@10.86.25.49:1521/hcedev";
 	//String db_pass = "appu@12345";
 	String db_uname = "tester";
 	String db_pass = "tester";
-String s1 =request.getParameter("test");
-		System.out.println(s1);
+
 	try {
 		
 		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
 		//String sql = "select * from bookings order by reg_date asc";
-		String sql = "select * from bookings where ordercode = 1";
+		//String sql = "select * from bookings where ordercode = 1";
 		Connection con = DriverManager.getConnection(url,db_uname,db_pass);
-		
-		
+		String s1 =request.getParameter("source");
+		System.out.println(s1);
+		String sql ="";
+		if(s1.equals("All")){
+			 sql = "select * from bookings order by reg_date asc";
+			 
+		}else if(s1.equals("Household")){
+			 sql = "select * from bookings where ordercode = 1";
+		}else if(s1.equals("Office")){
+			 sql = "select * from bookings where ordercode = 2";
+		}
+		else if(s1.equals("Vehicle")){
+			 sql = "select * from bookings where ordercode = 3";
+		} 
+		System.out.println(sql);
 		PreparedStatement ps =  con.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
+		
 		while(rs.next()){
 		%>
 		
@@ -109,8 +123,8 @@ String s1 =request.getParameter("test");
 } catch (Exception e) {
 e.printStackTrace();
 }
-%>
-</table>
-</div>
+%> 
+ </table> 
+ </div> 
 </body>
 </html>
